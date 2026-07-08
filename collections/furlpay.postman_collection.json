@@ -1,0 +1,1258 @@
+{
+    "item": [
+        {
+            "name": "Auth",
+            "description": "",
+            "item": [
+                {
+                    "id": "b721860a-40e4-43b1-95d7-f3e6cfab3869",
+                    "name": "Passkey challenge / registration / login",
+                    "request": {
+                        "name": "Passkey challenge / registration / login",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "api",
+                                "auth",
+                                "webauthn"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"action\": \"login\",\n  \"credential\": {}\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "870c38e7-005a-40d4-be26-987e2c5c411f",
+                            "name": "Challenge or session token",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "api",
+                                        "auth",
+                                        "webauthn"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: bearer",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"action\": \"login\",\n  \"credential\": {}\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [],
+                            "cookie": [],
+                            "_postman_previewlanguage": "text"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Wallets",
+            "description": "",
+            "item": [
+                {
+                    "id": "a495cd41-2b37-44dd-b18e-0ab995e90296",
+                    "name": "Get Safe balances and active modules",
+                    "request": {
+                        "name": "Get Safe balances and active modules",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "api",
+                                "wallets"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "81d46120-c322-464b-84bb-bc09db21ae82",
+                            "name": "Wallet state",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "api",
+                                        "wallets"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: bearer",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"safeAddress\": \"<string>\",\n  \"balances\": [\n    {\n      \"token\": \"EURC\",\n      \"amount\": \"<string>\",\n      \"chain\": \"<string>\"\n    },\n    {\n      \"token\": \"EURC\",\n      \"amount\": \"<string>\",\n      \"chain\": \"<string>\"\n    }\n  ]\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                },
+                {
+                    "id": "36f9e7cd-f9a9-4dac-9ab3-098463590619",
+                    "name": "Gas-sponsored L2 stablecoin transfer",
+                    "request": {
+                        "name": "Gas-sponsored L2 stablecoin transfer",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "api",
+                                "wallets",
+                                "transfer"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"destination\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"signature\": \"<string>\",\n  \"safeAddress\": \"<string>\",\n  \"token\": \"<string>\",\n  \"chain\": \"<string>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "8618f9e9-4ac6-4f97-a854-b72d63ad77f0",
+                            "name": "Transaction hash",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "api",
+                                        "wallets",
+                                        "transfer"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: bearer",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"destination\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"signature\": \"<string>\",\n  \"safeAddress\": \"<string>\",\n  \"token\": \"<string>\",\n  \"chain\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [],
+                            "cookie": [],
+                            "_postman_previewlanguage": "text"
+                        },
+                        {
+                            "id": "2b8169fa-4284-45bf-9581-505ce7578ce9",
+                            "name": "Blocked by AML policy",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "api",
+                                        "wallets",
+                                        "transfer"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: bearer",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"destination\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"signature\": \"<string>\",\n  \"safeAddress\": \"<string>\",\n  \"token\": \"<string>\",\n  \"chain\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "Forbidden",
+                            "code": 403,
+                            "header": [],
+                            "cookie": [],
+                            "_postman_previewlanguage": "text"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Banking",
+            "description": "",
+            "item": [
+                {
+                    "id": "f2170dd1-8cb9-42fd-8337-51ba7671c123",
+                    "name": "List virtual accounts",
+                    "request": {
+                        "name": "List virtual accounts",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "api",
+                                "banking"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "13a8db62-21c5-43e5-95f2-5886c8d0a744",
+                            "name": "Accounts",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "api",
+                                        "banking"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: bearer",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [],
+                            "cookie": [],
+                            "_postman_previewlanguage": "text"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                },
+                {
+                    "id": "c9837f4c-c7a5-48ed-bb3b-bde9244ca72c",
+                    "name": "Provision a virtual local account",
+                    "request": {
+                        "name": "Provision a virtual local account",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "api",
+                                "banking"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"currency\": \"EUR\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "893e5cbb-6387-4041-b0ae-6ad1a3a435ba",
+                            "name": "Account details",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "api",
+                                        "banking"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: bearer",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"currency\": \"EUR\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [],
+                            "cookie": [],
+                            "_postman_previewlanguage": "text"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Cards",
+            "description": "",
+            "item": [
+                {
+                    "id": "e12cd201-f2e1-40a6-9eab-fb16c6ead975",
+                    "name": "List cards",
+                    "request": {
+                        "name": "List cards",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "api",
+                                "cards"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "b579661c-301c-4514-8a98-f45947871178",
+                            "name": "Cards",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "api",
+                                        "cards"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: bearer",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [],
+                            "cookie": [],
+                            "_postman_previewlanguage": "text"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                },
+                {
+                    "id": "496aa09b-edbd-4780-a57c-5fda3ade3c4b",
+                    "name": "Update card",
+                    "request": {
+                        "name": "Update card",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "api",
+                                "cards"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "PATCH",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "47f07f62-767f-43d6-8b5a-29979368e63f",
+                            "name": "Updated card",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "api",
+                                        "cards"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: bearer",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                    }
+                                ],
+                                "method": "PATCH",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [],
+                            "cookie": [],
+                            "_postman_previewlanguage": "text"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                },
+                {
+                    "id": "cd8f3ca6-0790-4f1f-8766-33535957323d",
+                    "name": "Real-time card controls (freeze / limits / channels / priority)",
+                    "request": {
+                        "name": "Real-time card controls (freeze / limits / channels / priority)",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "api",
+                                "cards",
+                                "settings"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"cardId\": \"<string>\",\n  \"freeze\": \"<boolean>\",\n  \"limits\": {\n    \"daily\": \"<number>\",\n    \"perPurchase\": \"<number>\"\n  },\n  \"priority\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "665025ff-cbeb-42e4-a6b7-edb089daeb45",
+                            "name": "Success",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "api",
+                                        "cards",
+                                        "settings"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: bearer",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"cardId\": \"<string>\",\n  \"freeze\": \"<boolean>\",\n  \"limits\": {\n    \"daily\": \"<number>\",\n    \"perPurchase\": \"<number>\"\n  },\n  \"priority\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [],
+                            "cookie": [],
+                            "_postman_previewlanguage": "text"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Investing",
+            "description": "",
+            "item": [
+                {
+                    "id": "a13d099e-08eb-471f-beea-41f7f32f02ac",
+                    "name": "Place a fractional stock/ETF order",
+                    "request": {
+                        "name": "Place a fractional stock/ETF order",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "api",
+                                "investing",
+                                "order"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"symbol\": \"<string>\",\n  \"side\": \"buy\",\n  \"notional\": \"<number>\",\n  \"type\": \"limit\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "01a17562-1683-4843-a42e-18cd8cb22f54",
+                            "name": "Order result",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "api",
+                                        "investing",
+                                        "order"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: bearer",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"symbol\": \"<string>\",\n  \"side\": \"buy\",\n  \"notional\": \"<number>\",\n  \"type\": \"limit\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [],
+                            "cookie": [],
+                            "_postman_previewlanguage": "text"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                },
+                {
+                    "id": "bf472331-d3f8-4166-9a53-f3b07e67715c",
+                    "name": "Holdings, dividends & performance",
+                    "request": {
+                        "name": "Holdings, dividends & performance",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "api",
+                                "investing",
+                                "portfolio"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "2ca8ab29-3919-4e1a-a29a-9e471d65a42c",
+                            "name": "Portfolio",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "api",
+                                        "investing",
+                                        "portfolio"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: bearer",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [],
+                            "cookie": [],
+                            "_postman_previewlanguage": "text"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Swaps",
+            "description": "",
+            "item": [
+                {
+                    "id": "fdcc7c62-50e3-472b-8b7e-dd3b66b1fb9c",
+                    "name": "Cheapest cross-chain swap route (Li.Fi / 1inch)",
+                    "request": {
+                        "name": "Cheapest cross-chain swap route (Li.Fi / 1inch)",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "api",
+                                "swaps"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"fromToken\": \"<string>\",\n  \"toToken\": \"<string>\",\n  \"fromChain\": \"<string>\",\n  \"amountIn\": \"<number>\",\n  \"toChain\": \"<string>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "10b46fd9-bf48-4ec0-874e-968e0a4a886b",
+                            "name": "Swap quote",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "api",
+                                        "swaps"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: bearer",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"fromToken\": \"<string>\",\n  \"toToken\": \"<string>\",\n  \"fromChain\": \"<string>\",\n  \"amountIn\": \"<number>\",\n  \"toChain\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [],
+                            "cookie": [],
+                            "_postman_previewlanguage": "text"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Compliance",
+            "description": "",
+            "item": [
+                {
+                    "id": "b2a93029-c7b9-4af5-b9cd-8d6721c5494f",
+                    "name": "Persona / Sumsub identity verification",
+                    "request": {
+                        "name": "Persona / Sumsub identity verification",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "api",
+                                "compliance",
+                                "kyc"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "POST",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "db556d73-296f-4f5d-86d6-942b82671943",
+                            "name": "KYC result",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "api",
+                                        "compliance",
+                                        "kyc"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: bearer",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [],
+                            "cookie": [],
+                            "_postman_previewlanguage": "text"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                },
+                {
+                    "id": "d61d7f55-aaaa-4fed-a74e-0ca5ea78dc89",
+                    "name": "FATF Travel Rule metadata (Notabene / TRUST)",
+                    "request": {
+                        "name": "FATF Travel Rule metadata (Notabene / TRUST)",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "api",
+                                "compliance",
+                                "travel-rule"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "POST",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "04967e95-de52-4260-a95c-627fd1f8d661",
+                            "name": "Travel Rule payload",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "api",
+                                        "compliance",
+                                        "travel-rule"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: bearer",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [],
+                            "cookie": [],
+                            "_postman_previewlanguage": "text"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Webhooks",
+            "description": "",
+            "item": [
+                {
+                    "id": "81ae3fe0-ef75-452f-b5a6-3c7c4faf6501",
+                    "name": "Card authorization request (JIT funding)",
+                    "request": {
+                        "name": "Card authorization request (JIT funding)",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "api",
+                                "webhooks",
+                                "marqeta"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "POST",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "d328ff64-0a08-47da-a027-de26bfd90761",
+                            "name": "Approve/decline",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "api",
+                                        "webhooks",
+                                        "marqeta"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: bearer",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [],
+                            "cookie": [],
+                            "_postman_previewlanguage": "text"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                },
+                {
+                    "id": "e66a8bcf-15e0-4366-bf38-a0d960f16d54",
+                    "name": "Stablecoin deposit / payout state change",
+                    "request": {
+                        "name": "Stablecoin deposit / payout state change",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "api",
+                                "webhooks",
+                                "bridge"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "POST",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "eb6681ab-e12c-4095-a611-23c9f4f5e5fe",
+                            "name": "Received",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "api",
+                                        "webhooks",
+                                        "bridge"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: bearer",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [],
+                            "cookie": [],
+                            "_postman_previewlanguage": "text"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "type": "any",
+                "value": "{{bearerToken}}",
+                "key": "token"
+            }
+        ]
+    },
+    "event": [],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:3000"
+        }
+    ],
+    "info": {
+        "_postman_id": "4a5a011a-23b3-4dba-bc91-ac80f677ca37",
+        "name": "Furlpay Core API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": {
+            "content": "The Stripe + Coinbase of stablecoins & fractional investing. All endpoints run in sandbox/mock mode by default.\n\nContact Support:\n Name: Furlpay Developers",
+            "type": "text/plain"
+        }
+    }
+}
